@@ -12,6 +12,7 @@ import org.apache.shiro.web.servlet.Cookie;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class ShiroConfig {
@@ -23,6 +24,7 @@ public class ShiroConfig {
     }
 
     @Bean
+    @Primary
     public RememberMeManager rememberMeManager() {
         Cookie cookie = new SimpleCookie("rememberMe");
         cookie.setHttpOnly(true);
